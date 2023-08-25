@@ -1,0 +1,1 @@
+export const containerStyle={ mt: 2, mb: 2, maxWidth: { xs: "100%", sm: "85%" } }
