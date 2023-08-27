@@ -5,6 +5,7 @@ const legendSlice = createSlice({
   initialState: {
     continents: "",
     populationDensity: 0,
+    GdpPerCapita:0,
   },
   reducers: {
     setContinents: (state, action) => {
@@ -13,8 +14,11 @@ const legendSlice = createSlice({
     setPopulationDensity: (state, action) => {
       state.populationDensity = action.payload;
     },
+    setGDPPerCapita:(state,action)=>{
+      state.GdpPerCapita=action.payload;
+    }
   },
 });
 
-export const { setContinents , setPopulationDensity } = legendSlice.actions;
+export const { setContinents , setPopulationDensity , setGDPPerCapita } = legendSlice.actions;
 export default legendSlice.reducer;

@@ -23,7 +23,7 @@ const QuizHome = () => {
           <Toolbar />
           {prevQuizResult.length === 3 ? (
             <>
-            <Box border={0.1} m={3}>
+            <Box border={0.1} m={2}>
               <Typography variant="h5">
                 Your rating from the previous Quiz:
               </Typography>
@@ -41,7 +41,7 @@ const QuizHome = () => {
             Wanna Try more? just hit the Start Quiz
             </>
           ) : null}
-          <Box sx={{m:4}}>
+          <Box sx={{mt:10}}>
             <QuestionNumberSelector />
 
             <QuizFaq />

@@ -49,7 +49,7 @@ export default function QuizFaq() {
   };
 
   return (
-    <Box sx={{m:3}}>
+    <Box sx={{mt:10}}>
         {
             questions.map(question=>(
                 <Accordion  key={question.id} expanded={expanded === question.id} onChange={handleChange(question.id)}>

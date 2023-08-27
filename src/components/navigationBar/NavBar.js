@@ -5,7 +5,7 @@ import { AppBar, Tab, Tabs, Toolbar } from "@mui/material";
 
 export const NavBar = () => {
   const location = useLocation();
-  const styles={ height: "08vh", bgcolor: "#0476c1" }
+  const styles={ bgcolor: "#0476c1" }
   let index = pathIndex[location.pathname];
 
   return (

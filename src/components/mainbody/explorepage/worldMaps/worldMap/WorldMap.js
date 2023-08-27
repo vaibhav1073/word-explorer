@@ -10,6 +10,7 @@ import {
   colorScale,
   colorScalePopDensity,
   mapStyle,
+  gdpColorScale
 } from "../../../../../utils/utilFunctions/worldMaputil";
 import { Box } from "@mui/material";
 
@@ -29,8 +30,11 @@ const WorldMap = ({ countries, mode }) => {
 
   const popDensity = useSelector((state) => state.legend?.populationDensity);
 
+  const gdpPerCapita= useSelector(state=> state?.legend?.GdpPerCapita);
+
   const eachCountry = (country, layer) => {
     const cca3 = country?.properties?.iso_a3;
+    console.log(mode)
     if (mode === "Continents") {
       const color = colorScale(country?.properties?.continent);
       layer.options.fillColor = continents
@@ -38,9 +42,11 @@ const WorldMap = ({ countries, mode }) => {
           ? color
           : "white"
         : colorScale(country?.properties?.continent);
-      // layer.options.fillColor = colorScale(country?.properties?.continent);
+      
       layer.options.weight = 0.1;
-      layer.bindPopup(`${country.properties.continent}`);
+      layer.bindPopup(` ${country?.properties?.admin}, ${country.properties.continent}`);
+      // layer.bindPopup("<a href='" + encodeURI("https://www.w3schools.com") + "'>" + "somelink" + "</a>");
+      
     }
     if (mode === "Population_Density") {
       const pop = reduxData[cca3]?.population,
@@ -58,6 +64,13 @@ const WorldMap = ({ countries, mode }) => {
         `${country.properties?.admin} ${Math.round(density)} people per km sq`
       );
     }
+    else if(mode==="GDP_Per_Capita"){
+      const gdpNumber=country.properties.gdp_md/country.properties.pop_est * 1000000;
+          layer.options.fillColor= gdpPerCapita<=gdpNumber ?  gdpColorScale(gdpNumber) : "white";
+          
+          layer.bindPopup(`${country.properties.admin}, $${Math.round(gdpNumber)} ` ) 
+    }
+    
   };
 
   return (
@@ -66,7 +79,7 @@ const WorldMap = ({ countries, mode }) => {
       <MapContainer style={{ height: "70vh" }} zoom={2} center={[54, 15]}>
         <GeoJSON
           data={countries}
-          key={`${mode}+${continents}+${popDensity}`}
+          key={`${mode}+${continents}+${popDensity}+${gdpPerCapita}`}
           style={mapStyle}
           onEachFeature={eachCountry}
         />

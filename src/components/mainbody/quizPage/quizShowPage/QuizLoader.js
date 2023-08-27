@@ -33,7 +33,7 @@ const QuizLoader = () => {
       totalQuestions
     );
     dispatch(addQuestions(newQuestions));
-  }, [countriesData, dispatch]);
+  }, [countriesData, dispatch,questionsData.length,totalQuestions]);
 
   const incrementIndex = () => {
     const maxi = questionsData.length,

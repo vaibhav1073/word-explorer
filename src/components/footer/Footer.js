@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { LinkedIn, Instagram, GitHub } from "@mui/icons-material";
 import { Box, Toolbar } from "@mui/material";
 
 export default function Footer() {
@@ -26,8 +26,7 @@ export default function Footer() {
               About Us
             </Typography>
             <Typography variant="body2"  >
-              We are XYZ company, dedicated to providing the best service to our
-              customers.
+              World Explorer is a web app built on react to enable users to get information about different countries around the globe.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -35,21 +34,19 @@ export default function Footer() {
               Contact Us
             </Typography>
             <Typography variant="body2"  >
-              123 Main Street, Anytown, USA
+              Pune,Maharastra
             </Typography>
             <Typography variant="body2"  >
-              Email: info@example.com
+              Email: jainvaibhav0111it181110@gmail.com
             </Typography>
-            <Typography variant="body2"  >
-              Phone: +1 234 567 8901
-            </Typography>
+            
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6"   gutterBottom>
               Follow Us
             </Typography>
-            <Link href="https://www.facebook.com/" color="inherit">
-              <Facebook />
+            <Link href="https://www.github.com/vaibhav1073" color="inherit">
+              <GitHub />
             </Link>
             <Link
               href="https://www.instagram.com/"
@@ -58,8 +55,8 @@ export default function Footer() {
             >
               <Instagram />
             </Link>
-            <Link href="https://www.twitter.com/" color="inherit">
-              <Twitter />
+            <Link href="https://in.linkedin.com/in/vaibhav-jain-370477222" color="inherit">
+              <LinkedIn />
             </Link>
           </Grid>
         </Grid>
@@ -67,7 +64,7 @@ export default function Footer() {
           <Typography variant="body2"   align="center">
             {"Copyright © "}
             <Link color="inherit" href="https://your-website.com/">
-              Your Website
+              World Explorer
             </Link>{" "}
             {new Date().getFullYear()}
             {"."}

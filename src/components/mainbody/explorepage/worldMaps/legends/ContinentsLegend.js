@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { setContinents } from "../../../../../services/slices/legendSlice";
 // import { colorScale } from "../../../../../utils/utilFunctions/worldMaputil";
 import { FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 
 const ContinentsLegend = ({ regions }) => {
   const dispatch = useDispatch();
+  const currentContinent=useSelector(state=>state?.legend?.continents)
   const [selected, setSelected] = useState('');
   const handleClick = (region) => {
     dispatch(setContinents(region));
@@ -21,7 +22,7 @@ const ContinentsLegend = ({ regions }) => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={selected}
+            value={currentContinent}
             label="Select Continent"
             onChange={(e)=>handleClick(e.target.value)}
           >

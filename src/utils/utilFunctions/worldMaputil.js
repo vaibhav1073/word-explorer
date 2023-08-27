@@ -1,3 +1,5 @@
+
+
 export const findExtremePoints = (data) => {
   if (!data) {
     // console.log("data nahi hai bhai")
@@ -39,6 +41,16 @@ export const colorScale = (continent) => {
       return "#F5F4F6"; // Default color for other continents
   }
 };
+
+export const gdpColorScale=(gdpPerCapitaData)=>{
+  
+if(gdpPerCapitaData>=40000)return "#ffec19"
+if(gdpPerCapitaData>=20000)return "#ffc100"
+ if(gdpPerCapitaData>=10000)return "#ff9800"
+ if(gdpPerCapitaData >= 2000) return "#ff5607"
+ else return "#f6412d"
+
+}
 
 export const colorScalePopDensity = (population, area, min, max) => {
   const density = population / area;

@@ -10,7 +10,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { box1, mainContainer, typographyStyle } from "./exploreHomeStyles";
+import { box1, mainContainer, typographyStyle} from "./exploreHomeStyles";
 import { exploreHeading } from "../../../utils/constants/copyrightTexts";
 
 const LazyWorldMapContainer = lazy(() =>
@@ -43,6 +43,7 @@ const ExploreHome = () => {
             scrollButtons={true}
             indicatorColor="secondary"
             onChange={handleChange}
+            variant="fullWidth"
           >
             <Tab label="Continents" value={0} />
             <Tab label="Population Density" value={1} />

@@ -19,7 +19,7 @@ export const TyperText = () => {
       if(isIntersecting){
         currentText = texts[currentIndex];
       setTypedText(currentText);
-      currentIndex++;
+      ++currentIndex;
 
       if (currentIndex === texts.length) {
         currentIndex = 0;
@@ -29,7 +29,7 @@ export const TyperText = () => {
     }, 180); // Adjust the delay (in milliseconds) to control the typing speed
 
     return () => clearInterval(typingInterval);
-  }, [isIntersecting]);
+  }, [isIntersecting,texts]);
 
   useEffect(()=>{
     const options={rootMargin:"20px",threshold:0.5}

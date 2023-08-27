@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   Box,
@@ -15,8 +14,7 @@ import { setAttempt } from "../../../../services/slices/quizSlice";
 const QuestionContainer = ({ questionObj, index }) => {
   const dispatch=useDispatch()
 
-  const [attempted, setAttempted] = useState(new Map());
-  const [isCorrect, setIsCorrect] = useState(false);
+
 
   const handleClick = (e) => {
     // if (e.target.textContent === questionObj?.answer) setIsCorrect(true);

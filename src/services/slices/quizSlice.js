@@ -19,6 +19,7 @@ const quizSlice=createSlice({
         },
         addQuestions:(state,action)=>{
             state.questionData=action.payload;
+            state.correctAnswers=0;
         },
         setAttempt:(state,action)=>{
             const {index,attempted,result}=action.payload;
@@ -32,6 +33,7 @@ const quizSlice=createSlice({
            
                 state.startQuiz=false
                 state.score=[state.correctAnswers,state.attempted,state.questions]
+                state.correctAnswers=0;
                 state.questionData=[]
                 state.attempted=0
             

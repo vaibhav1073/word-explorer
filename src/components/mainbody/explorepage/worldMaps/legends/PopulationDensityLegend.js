@@ -12,6 +12,7 @@ const PopulationDensityLegend = () => {
   const maxPopDen = useSelector(
     (state) => state.extremePoints?.maximumPopulationDensity
   );
+  const currentPopDensity=useSelector(state=>state?.legend?.populationDensity)
 
   const [value, setValue] = useState(0);
   const handleChange = (_, newValue) => {
@@ -32,7 +33,7 @@ const PopulationDensityLegend = () => {
         max={maxPopDen / 100}
         min={minPopDen / 100}
         valueLabelDisplay="on"
-        value={value}
+        value={currentPopDensity}
         onChange={handleChange}
       />
 
