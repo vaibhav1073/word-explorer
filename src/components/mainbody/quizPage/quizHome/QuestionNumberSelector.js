@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 const QuestionNumberSelector = () => {
-  const [questionNumber, setquestionNumber] = useState(3);
+  const [questionNumber, setquestionNumber] = useState(5);
   const dispatch = useDispatch();
   const handleChange = (event) => {
     setquestionNumber(event.target.value);
