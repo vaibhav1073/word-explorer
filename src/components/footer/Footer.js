@@ -26,7 +26,7 @@ export default function Footer() {
               About Us
             </Typography>
             <Typography variant="body2"  >
-            Word Explorer is a React app that uses the <Link href="https://restcountries.com" sx={{color:"white"}}>REST Countries API</Link> to provide users with information about different countries. The app is built with Redux Toolkit, Fuse.js search, and React Map Leaflet. It also features various graphs for data visualization and advanced learning.World Explorer is a great way to learn about the world and explore different cultures. Allowing users to view graphs that visualize data about a country, such as its GDP, population growth, and continents.
+            Word Explorer is a React app that uses the <Link href="https://restcountries.com" sx={{color:"white" ,  textDecoration:"underline"}}>REST Countries API</Link> to provide users with information about different countries. The app is built with Redux Toolkit, Fuse.js search, and React Map Leaflet. It also features various graphs for data visualization and advanced learning.World Explorer is a great way to learn about the world and explore different cultures. Allowing users to view graphs that visualize data about a country, such as its GDP, population growth, and continents.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
