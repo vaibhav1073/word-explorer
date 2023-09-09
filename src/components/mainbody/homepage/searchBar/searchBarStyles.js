@@ -17,4 +17,5 @@ export const containerStyle2 = {
   top: "100%",
   width: "90%",
   zIndex: 2,
+  marginBottom:5,
 };
